@@ -1,0 +1,54 @@
+name: Refactor
+description: Suggest code restructuring without functional changes
+title: "[Refactor]: "
+labels:
+  - refactor
+body:
+  - type: dropdown
+    id: refactor_type
+    attributes:
+      label: Refactor Type
+      description: Select what this refactor targets.
+      options:
+        - Code
+        - Documentation
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what should be refactored and why.
+      placeholder: Which part of the code should be improved?
+    validations:
+      required: true
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort Estimate
+      description: "How long do you expect this to take? Also apply the matching `effort: N` label (1–10) to this issue."
+      options:
+        - "1 — trivial (few hours)"
+        - "2 — very small (< 1 day)"
+        - "3 — small (1 day)"
+        - "4 — small-medium (1–2 days)"
+        - "5 — medium (2–3 days)"
+        - "6 — medium-large (3–4 days)"
+        - "7 — large (4–5 days)"
+        - "8 — very large (1 week)"
+        - "9 — extra large (1–2 weeks)"
+        - "10 — massive (2+ weeks)"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Checklist of conditions that must be met to close this issue.
+      placeholder: |
+        - [ ] Code is restructured without changing behavior
+        - [ ] Naming and readability are improved
+        - [ ] Existing tests still pass
+    validations:
+      required: true

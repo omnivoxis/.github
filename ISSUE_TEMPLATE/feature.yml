@@ -1,0 +1,52 @@
+name: Feature
+description: Propose a new feature
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the feature and why it is needed.
+      placeholder: What should be added or improved?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Explain how this feature could be implemented.
+      placeholder: Technical or functional approach
+    validations:
+      required: false
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Effort Estimate
+      description: "How long do you expect this to take? Also apply the matching `effort: N` label (1–10) to this issue."
+      options:
+        - "1 — trivial (few hours)"
+        - "2 — very small (< 1 day)"
+        - "3 — small (1 day)"
+        - "4 — small-medium (1–2 days)"
+        - "5 — medium (2–3 days)"
+        - "6 — medium-large (3–4 days)"
+        - "7 — large (4–5 days)"
+        - "8 — very large (1 week)"
+        - "9 — extra large (1–2 weeks)"
+        - "10 — massive (2+ weeks)"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Checklist of conditions that must be met to close this issue.
+      placeholder: |
+        - [ ] Feature behavior is implemented
+        - [ ] Tests are added or updated
+        - [ ] Documentation is updated
+    validations:
+      required: true
+
